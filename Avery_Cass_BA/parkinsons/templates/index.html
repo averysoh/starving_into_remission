@@ -1,0 +1,85 @@
+{% extends base %}
+
+{% block title %}Bokeh Shaking Palsy {% endblock %}
+
+{% block postamble %}
+  <style>
+    {% include 'styles.css' %}
+  </style>
+{% endblock %}
+
+{% block contents %}
+  <div class="content">
+    <h1 align="center">Parkinson's Disease</h1>
+    <h3 align="center">What factors lead to greater risk, <br>An exploratory analysis</h3>
+
+    <img src="parkinsons/static/brain.png" alt="Parkinson's Disease Medical Journal" width="400" height="400" class="center">
+
+    <p align="center">Following a similar structure to Hans Rosling's gapminder, we visualise the
+      prevalence of Parkinson's Disease. We compare this prevalence against the percentage
+      of new cases of parkinsons (Incidence) in each country and the corresponding sugar consumption.
+      The data is also categorised by region and gender in hopes that we may see a
+      trend over time within these categories.<a href="http://ghdx.healthdata.org/gbd-results-tool"> Data Source</a> </p>
+
+    {{ super() }}
+
+    <h3>Brief Guide</h3>
+
+
+    <p>
+    <h4>Prevalence:</h4> Referring to the proportion of people in a population who are a case of Parkinson's Disease
+    <h4>Incidence:</h4> Number of new cases of Parkinson's Disease each year as a percentage of the population
+    <h4>Y-Axis:</h4> Incidence of Parkinson's Disease for that year as a percentage of population
+    <h4>X-Axis:</h4> All risk variables are measured in Years lived with disability (YLDs) as a percentage of the population.
+                      The x-axis scale can also be presented as a log scale. Definition of variables below can be found
+                      <a href="http://www.healthdata.org/sites/default/files/files/Data_viz/GBD_2017_Tools_Overview.pdf"> here</a>.<br><br>
+    <style type="text/css">
+    .tg  {border-collapse:collapse;border-spacing:0;}
+    .tg td{font-family:Helvetica, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+    .tg th{font-family:Helvetica, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+    .tg .tg-1wig{font-weight:bold;text-align:left;vertical-align:top}
+    .tg .tg-0lax{text-align:left;vertical-align:top}
+    </style>
+    <table class="tg">
+      <tr>
+        <td class="tg-1wig">Years lived with<br>disability (YLDs)</td>
+        <td class="tg-0lax">Years lived with any short-term or long-term health loss weighted for severity by the disability weights</td>
+      </tr>
+      <tr>
+        <td class="tg-1wig">Risk (Risk factor)</td>
+        <td class="tg-0lax">An attribute, behavior, exposure, or other factor which is causally associated with an increased (or decreased) <br>probability of a disease or injury. If the probability decreased, the risk is a protective factor.</td>
+      </tr>
+      <tr>
+        <td class="tg-1wig">High/ Low Diets<br></td>
+        <td class="tg-0lax">Measured in (g/day)</td>
+      </tr>
+      <tr>
+        <td class="tg-1wig">High LDL cholesterol</td>
+        <td class="tg-0lax">Metabolic risks: Low-density lipoprotein (mmol/L)</td>
+      </tr>
+      <tr>
+        <td class="tg-1wig">High body-mass index</td>
+        <td class="tg-0lax">Prevalence of Obesity (BMI&gt;= 30)</td>
+      </tr>
+      <tr>
+        <td class="tg-1wig">High fasting plasma glucose</td>
+        <td class="tg-0lax">Metabolic risks: High fasting plasma glucose(continuous) exposure or Diabetes mellitus </td>
+      </tr>
+      <tr>
+        <td class="tg-1wig">Smoking</td>
+        <td class="tg-0lax">Prevalence of Former/Current Smokers</td>
+      </tr>
+    </table>
+
+    <h4>Size:</h4> The prevalence of Parkinson's as a percentage of population within that country and gender
+    <h4>Plot colour:</h4> Gender (Blue for males and pink for females). The shades of the individual
+                          colours further divides the plots into their respective geographical regions.
+                          Toggle the legend to hide certain regions.</p>
+
+    <br>
+    <br>
+    <footer align="right">&copy; <a href="https://www.linkedin.com/in/avery-soh/"> Avery Soh</a> 2019</footer>
+
+
+  </div>
+{% endblock %}
